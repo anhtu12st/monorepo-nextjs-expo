@@ -1,0 +1,31 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   concurrency: 1,
+0 silly argv   since: 'HEAD',
+0 silly argv   'exclude-dependents': true,
+0 silly argv   excludeDependents: true,
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': 'lerna',
+0 silly argv   script: 'lint'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/anhtu12st/Documents/Programing/school
+3 notice filter changed since "HEAD"
+4 notice filter excluding dependents
+5 silly hasTags
+6 verbose hasTags false
+7 info Looking for changed packages since HEAD
+8 silly checking diff packages/admin
+9 error Error: Command failed: git diff --name-only HEAD -- packages/admin
+9 error fatal: bad revision 'HEAD'
+9 error
+9 error
+9 error     at makeError (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
+9 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:338:15)
+9 error     at Object.execSync (/usr/local/lib/node_modules/lerna/node_modules/@lerna/child-process/index.js:26:16)
+9 error     at diffSinceIn (/usr/local/lib/node_modules/lerna/node_modules/@lerna/collect-updates/lib/make-diff-predicate.js:63:23)
+9 error     at hasDiffSinceThatIsntIgnored (/usr/local/lib/node_modules/lerna/node_modules/@lerna/collect-updates/lib/make-diff-predicate.js:27:18)
+9 error     at isCandidate (/usr/local/lib/node_modules/lerna/node_modules/@lerna/collect-updates/collect-updates.js:88:77)
+9 error     at /usr/local/lib/node_modules/lerna/node_modules/@lerna/collect-updates/lib/collect-packages.js:11:9
+9 error     at Map.forEach (<anonymous>)
+9 error     at collectPackages (/usr/local/lib/node_modules/lerna/node_modules/@lerna/collect-updates/lib/collect-packages.js:10:12)

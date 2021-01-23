@@ -1,0 +1,43 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "client": "lerna --scope=client run dev --stream --",
+    "admin": "lerna --scope=admin run dev --stream --",
+    "server": "lerna --scope=server run start --stream --",
+    "shared": "lerna --scope=@anhtu12st/shared run start --stream --",
+    "expo": "cd packages/mobile && yarn start",
+    "ios": "lerna --scope=mobile run ios --stream --",
+    "android": "lerna --scope=mobile run android --stream --",
+    "web": "lerna --scope=mobile run web --stream --",
+    "bootstrap": "lerna bootstrap",
+    "lint": "lerna run lint --concurrency 1 --exclude-dependents"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**",
+      "**/expo",
+      "**/expo/**"
+    ]
+  },
+  "lint-staged": {
+    "packages/**/*.ts": [
+      "yarn eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
